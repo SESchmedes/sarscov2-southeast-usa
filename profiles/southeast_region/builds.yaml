@@ -29,7 +29,7 @@ subsampling:
     # Contextual samples from division's country
     country:
       group_by: "division year month"
-      seq_per_group: 20
+      seq_per_group: 15
       exclude: "--exclude-where 'region!={region}' 'country!={country}' 'division={division}'"
       priorities:
         type: "proximity"
@@ -37,7 +37,7 @@ subsampling:
     # Contextual samples from division's region
     region:
       group_by: "country year month"
-      seq_per_group: 10
+      seq_per_group: 8
       exclude: "--exclude-where 'region!={region}' 'country={country}'"
       priorities:
         type: "proximity"
@@ -46,7 +46,7 @@ subsampling:
     # division to avoid resampling.
     global:
       group_by: "country year month"
-      seq_per_group: 5
+      seq_per_group: 4
       exclude: "--exclude-where 'region={region}'"
       priorities:
         type: "proximity"
@@ -84,13 +84,13 @@ subsampling:
     # Contextual samples from the country
     country:
       group_by: "division year month"
-      seq_per_group: 30
+      seq_per_group: 15
       exclude: "--exclude-where 'country!=usa'"
 
     # Contextual samples from division's region
     region:
       group_by: "country year month"
-      seq_per_group: 10
+      seq_per_group: 8
       exclude: "--exclude-where 'region!=north-america'"
       priorities:
         type: "proximity"
@@ -99,7 +99,7 @@ subsampling:
     # division to avoid resampling.
     global:
       group_by: "country year month"
-      seq_per_group: 5
+      seq_per_group: 4
       exclude: "--exclude-where 'region=north-america'"
       priorities:
         type: "proximity"
