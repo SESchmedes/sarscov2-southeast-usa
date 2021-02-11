@@ -1,3 +1,7 @@
+
+
+
+
 # Define locations for which builds should be created.
 # For each build we specify a subsampling scheme via an explicit key.
 # If the name of the focal geography differs from the build name this needs to
@@ -7,6 +11,12 @@
 builds:
   florida:
     subsampling_scheme: state
+    geographic_scale: division
+    region: North America
+    country: USA
+    division: Florida
+  florida-only:
+    subsampling_scheme: state-only
     geographic_scale: division
     region: North America
     country: USA
@@ -104,6 +114,12 @@ subsampling:
       priorities:
         type: "proximity"
         focus: "country"
+
+  state-only:
+    division:
+      group_by: "year month"
+      max_sequences: 4000
+      exclude: "--exclude-where 'region!={region}' 'country!={country}' 'division!={division}'"
 
 files:
   auspice_config: "my_profiles/southeast_region/auspice_config_southeast.json"
