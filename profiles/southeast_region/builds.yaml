@@ -8,6 +8,7 @@
 # be specified explicity as geographic_name. In addition, we require the
 # geographic scale the build focuses on. Together name and scale serve a look-up
 # in the geo_hierarchy to define region, country, division, etc
+use_nextalign: true
 builds:
   florida:
     subsampling_scheme: state
